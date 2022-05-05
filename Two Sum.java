@@ -25,6 +25,27 @@ Constraints:
 Only one valid answer exists.
  
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
+
+
+Hasing Aproach time O(n) space O(n);
+-------------------------------------------------------
+public class Solution {
+   public static int[]twoSum(int arr[], int target) {
+		int res[] = new int[2];
+		int n = arr.length;
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+		for(int i=0; i<n; i++) {
+			if (map.containsKey(target-arr[i])) {
+				res[1] = i;
+				res[0] = map.get(target-arr[i]);
+				return res;
+			}
+			map.put(arr[i], i);
+		}
+		return res;
+   }
+}
+
 */
 
 public class Solution {
